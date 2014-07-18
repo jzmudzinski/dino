@@ -12,11 +12,11 @@ class ItemsController < ApplicationController
       when 'ending'
         :item_ending_time
       else
-        "item_id DESC"
+        "id DESC"
     end
-    @items = Item.where("item_ending_time > ?", Time.now.to_i - 100000000)
+    @items = Item.where("item_ending_time > ?", Time.now.to_i)
+      .where("item_is_buy_now_active = ?", params[:bn])
       .order(order).limit(params[:limit]).all
-      # .where("item_is_buy_now_active = ?", params[:bn] && ? "1" : "0")
   end
 
   # GET /items/1
