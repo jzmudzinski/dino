@@ -7,7 +7,8 @@ FROM ubuntu
 RUN apt-get update -q
 RUN apt-get install -qy nginx
 RUN apt-get install -qy curl
-RUN apt-get install -qy nodejs
+# RUN apt-get install -qy nodejs
+RUN apt-get install -qy libmysql-ruby libmysqlclient-dev
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
 
 # Install rvm, ruby, bundler
