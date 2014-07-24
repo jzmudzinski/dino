@@ -33,6 +33,8 @@ RUN /bin/bash -l -c "bundle install"
 
 # Publish port 80
 EXPOSE 80
+EXPOSE 8080
+EXPOSE 22
 
 # Startup commands
 ENTRYPOINT /usr/bin/start-server
